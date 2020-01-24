@@ -1,0 +1,422 @@
+# Constraints file for ZestET1
+# File name: ZestET1.ucf
+# Version: 1.20
+# Date: 16/5/2011
+
+# Copyright (C) 2011 Orange Tree Technologies Ltd. All rights reserved.
+# Orange Tree Technologies grants the purchaser of a ZestET1 the right to use and
+# modify this logic core in any form including but not limited to VHDL source code or
+# EDIF netlist in FPGA designs that target the ZestET1.
+# Orange Tree Technologies prohibits the use of this logic core or any modification of
+# it in any form including but not limited to VHDL source code or EDIF netlist in
+# FPGA or ASIC designs that target any other hardware unless the purchaser of the
+# ZestET1 has purchased the appropriate licence from Orange Tree Technologies.
+# Contact Orange Tree Technologies if you want to purchase such a licence.
+
+#*****************************************************************************************
+#**
+#**  Disclaimer: LIMITED WARRANTY AND DISCLAIMER. These designs are
+#**              provided to you "as is". Orange Tree Technologies and its licensors 
+#**              make and you receive no warranties or conditions, express, implied, 
+#**              statutory or otherwise, and Orange Tree Technologies specifically 
+#**              disclaims any implied warranties of merchantability, non-infringement,
+#**              or fitness for a particular purpose. Orange Tree Technologies does not
+#**              warrant that the functions contained in these designs will meet your 
+#**              requirements, or that the operation of these designs will be 
+#**              uninterrupted or error free, or that defects in the Designs will be 
+#**              corrected. Furthermore, Orange Tree Technologies does not warrant or 
+#**              make any representations regarding use or the results of the use of the 
+#**              designs in terms of correctness, accuracy, reliability, or otherwise.                                               
+#**
+#**              LIMITATION OF LIABILITY. In no event will Orange Tree Technologies 
+#**              or its licensors be liable for any loss of data, lost profits, cost or 
+#**              procurement of substitute goods or services, or for any special, 
+#**              incidental, consequential, or indirect damages arising from the use or 
+#**              operation of the designs or accompanying documentation, however caused 
+#**              and on any theory of liability. This limitation will apply even if 
+#**              Orange Tree Technologies has been advised of the possibility of such 
+#**              damage. This limitation shall apply notwithstanding the failure of the 
+#**              essential purpose of any limited remedies herein.
+#**
+#*****************************************************************************************
+
+##############################################################################
+# Programmable clock
+net "CLK" LOC = "N5";
+net "CLK" IOSTANDARD = LVCMOS25;
+net "CLK" TNM_net = "CLK";
+timespec "TS_CLK" = PERIOD "CLK" 8 ns HIGH 50 %;
+net "CLK" CLOCK_DEDICATED_ROUTE = FALSE;
+
+##############################################################################
+# Flash Interface
+net "Flash_CSOn" LOC = "T2";
+net "Flash_CLK"  LOC = "R14";
+net "Flash_MOSI" LOC = "P10";
+net "Flash_MISO" LOC = "T14";
+net "Flash_CSOn" IOSTANDARD = LVCMOS25 | SLEW = FAST;
+net "Flash_CLK"  IOSTANDARD = LVCMOS25 | SLEW = FAST;
+net "Flash_MOSI" IOSTANDARD = LVCMOS25 | SLEW = FAST;
+net "Flash_MISO" IOSTANDARD = LVCMOS25;
+
+##############################################################################
+# IO connector
+net "IO0_In"    LOC = "E6";
+net "IO0<0>"    LOC = "B15" | IOSTANDARD = LVDS_25;  #P0
+net "IO0<1>"    LOC = "B14" | IOSTANDARD = LVDS_25;  #N0
+net "IO0<2>"    LOC = "A14" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;  #P1
+net "IO0<3>"    LOC = "A13" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;  #N1
+net "IO0<4>"    LOC = "D13" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<5>"    LOC = "C13" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<6>"    LOC = "C12" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<7>"    LOC = "D12" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<8>"    LOC = "B12" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<9>"    LOC = "A12" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<10>"   LOC = "D11" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<11>"   LOC = "D10" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<12>"   LOC = "C11" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<13>"   LOC = "A11" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<14>"   LOC = "B10" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<15>"   LOC = "A10" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<16>"   LOC = "C10" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<17>"   LOC = "D9" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<18>"   LOC = "C9" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<19>"   LOC = "A9" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<20>"   LOC = "C8" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<21>"   LOC = "D8" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<22>"   LOC = "A8" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<23>"   LOC = "B8" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<24>"   LOC = "E9" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<25>"   LOC = "E7" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<26>"   LOC = "A7" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<27>"   LOC = "C7" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<28>"   LOC = "D7" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<29>"   LOC = "C6" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<30>"   LOC = "A6" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<31>"   LOC = "B6" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<32>"   LOC = "A5" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<33>"   LOC = "C5" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<34>"   LOC = "C4" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<35>"   LOC = "D5" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;
+net "IO0<36>"   LOC = "A4" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;   #P18
+net "IO0<37>"   LOC = "B4" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;   #N18
+net "IO0<38>"   LOC = "A3" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;   #P19
+net "IO0<39>"   LOC = "B3" | IOSTANDARD = LVDS_25 | DIFF_TERM = TRUE;   #N19
+
+net "IO3<0>"    LOC = "C2";   #P0
+net "IO3<1>"    LOC = "C1";   #N0
+net "IO3<2>"    LOC = "D4";   #P1
+net "IO3<3>"    LOC = "D3";   #N1
+net "IO3<4>"    LOC = "D1";
+net "IO3<5>"    LOC = "E1";
+net "IO3<6>"    LOC = "E3";
+net "IO3<7>"    LOC = "E2";
+net "IO3<8>"    LOC = "E4";
+net "IO3<9>"    LOC = "F4";
+net "IO3<10>"   LOC = "F3";
+net "IO3<11>"   LOC = "G3";
+net "IO3<12>"   LOC = "F1";
+net "IO3<13>"   LOC = "G1";
+net "IO3<14>"   LOC = "G2";
+net "IO3<15>"   LOC = "H1";
+net "IO3<16>"   LOC = "H3";
+net "IO3<17>"   LOC = "J3";
+net "IO3<18>"   LOC = "J2";
+net "IO3<19>"   LOC = "J1";
+net "IO3<20>"   LOC = "K3";
+net "IO3<21>"   LOC = "K1";
+net "IO3<22>"   LOC = "K4";
+net "IO3<23>"   LOC = "L3";
+net "IO3<24>"   LOC = "L1";
+net "IO3<25>"   LOC = "L2";
+net "IO3<26>"   LOC = "M3";
+net "IO3<27>"   LOC = "L4";
+net "IO3<28>"   LOC = "M1";
+net "IO3<29>"   LOC = "N1";
+net "IO3<30>"   LOC = "N3";
+net "IO3<31>"   LOC = "M4";
+net "IO3<32>"   LOC = "N2";   #P16
+net "IO3<33>"   LOC = "P1";   #N16
+net "IO3<34>"   LOC = "R1";   #P17
+net "IO3<35>"   LOC = "P2";   #N17
+net "IO3_In<0>" LOC = "G4";
+net "IO3_In<1>" LOC = "J4";
+net "IO3_In<2>" LOC = "J5";
+
+##############################################################################
+# Ethernet Interface
+net "Eth_Clk"   LOC = "T5";
+net "Eth_CSn"   LOC = "T11";
+net "Eth_WEn"   LOC = "T10";
+net "Eth_A<0>"  LOC = "P5";
+net "Eth_A<1>"  LOC = "P4";
+net "Eth_A<2>"  LOC = "N4";
+net "Eth_A<3>"  LOC = "T3";
+net "Eth_A<4>"  LOC = "R2";
+net "Eth_D<0>"  LOC = "N11";
+net "Eth_D<1>"  LOC = "P11";
+net "Eth_D<2>"  LOC = "N9";
+net "Eth_D<3>"  LOC = "P9";
+net "Eth_D<4>"  LOC = "R9";
+net "Eth_D<5>"  LOC = "T9";
+net "Eth_D<6>"  LOC = "N8";
+net "Eth_D<7>"  LOC = "P8";
+net "Eth_D<8>"  LOC = "T8";
+net "Eth_D<9>"  LOC = "P7";
+net "Eth_D<10>" LOC = "R7";
+net "Eth_D<11>" LOC = "T7";
+net "Eth_D<12>" LOC = "T6";
+net "Eth_D<13>" LOC = "R5";
+net "Eth_D<14>" LOC = "T4";
+net "Eth_D<15>" LOC = "R3";
+net "Eth_BE<0>" LOC = "R11";
+net "Eth_BE<1>" LOC = "N6";
+net "Eth_Intn"  LOC = "P6";
+
+net "Eth_Clk"   IOSTANDARD = LVCMOS25 | SLEW = FAST | DRIVE = 6;
+net "Eth_CSn"   IOSTANDARD = LVCMOS25 | SLEW = FAST | DRIVE = 6;
+net "Eth_WEn"   IOSTANDARD = LVCMOS25 | SLEW = FAST | DRIVE = 6;
+net "Eth_A<*>"  IOSTANDARD = LVCMOS25 | SLEW = FAST | DRIVE = 6;
+net "Eth_D<*>"  IOSTANDARD = LVCMOS25 | SLEW = FAST | DRIVE = 6;
+net "Eth_BE<*>" IOSTANDARD = LVCMOS25 | SLEW = FAST | DRIVE = 6;
+net "Eth_Intn"  IOSTANDARD = LVCMOS25;
+
+timespec "TS_Eth" = from FFS to PADS("Eth_*") 4.25ns;
+
+##############################################################################
+# DDR SDRAM interface
+NET "DS_A<0>"  LOC = "E14";
+NET "DS_A<1>"  LOC = "C15";
+NET "DS_A<2>"  LOC = "K13";
+NET "DS_A<3>"  LOC = "C16";
+NET "DS_A<4>"  LOC = "T13";
+NET "DS_A<5>"  LOC = "N16";
+NET "DS_A<6>"  LOC = "R13";
+NET "DS_A<7>"  LOC = "N14";
+NET "DS_A<8>"  LOC = "P13";
+NET "DS_A<9>"  LOC = "N13";
+NET "DS_A<10>" LOC = "D16";
+NET "DS_A<11>" LOC = "P12";
+NET "DS_A<12>" LOC = "N12";
+NET "DS_BA<0>" LOC = "D15";
+NET "DS_BA<1>" LOC = "E13";
+NET "DS_CAS_N" LOC = "D14";
+NET "DS_CKE"   LOC = "P16";
+NET "DS_RAS_N" LOC = "F14";
+NET "DS_WE_N"  LOC = "F13";
+
+NET "DS_CLK_P" LOC = "R15";
+NET "DS_CLK_N" LOC = "P15";
+
+NET "DS_DQS<0>" LOC = "G13";
+NET "DS_DM<0>"  LOC = "J12";
+NET "DS_DQ<0>"  LOC = "G14";
+NET "DS_DQ<1>"  LOC = "F15";
+NET "DS_DQ<2>"  LOC = "H13";
+NET "DS_DQ<3>"  LOC = "G16";
+NET "DS_DQ<4>"  LOC = "H15";
+NET "DS_DQ<5>"  LOC = "F16";
+NET "DS_DQ<6>"  LOC = "H16";
+NET "DS_DQ<7>"  LOC = "E16";
+
+NET "DS_DQS<1>" LOC = "L13";
+NET "DS_DM<1>"  LOC = "J13";
+NET "DS_DQ<8>"  LOC = "L16";
+NET "DS_DQ<9>"  LOC = "J16";
+NET "DS_DQ<10>" LOC = "M16";
+NET "DS_DQ<11>" LOC = "K16";
+NET "DS_DQ<12>" LOC = "M15";
+NET "DS_DQ<13>" LOC = "K15";
+NET "DS_DQ<14>" LOC = "L14";
+NET "DS_DQ<15>" LOC = "K14";
+
+NET "DS_A<*>"   IOSTANDARD = SSTL2_I;
+NET "DS_BA<*>"  IOSTANDARD = SSTL2_I;
+NET "DS_CKE"    IOSTANDARD = SSTL2_I;
+NET "DS_CLK_P"  IOSTANDARD = SSTL2_I;
+NET "DS_CLK_N"  IOSTANDARD = SSTL2_I;
+NET "DS_CAS_N"  IOSTANDARD = SSTL2_I;
+NET "DS_RAS_N"  IOSTANDARD = SSTL2_I;
+NET "DS_WE_N"   IOSTANDARD = SSTL2_I;
+NET "DS_DQS<*>" IOSTANDARD = SSTL2_II | PULLDOWN;
+NET "DS_DM<*>"  IOSTANDARD = SSTL2_II;
+NET "DS_DQ<*>"  IOSTANDARD = SSTL2_II;
+
+# Timing Constraints
+NET "DS_DQS<0>" TNM_NET = "DS_DQS<0>";
+TIMESPEC "TSDS_DQS0" = PERIOD "DS_DQS<0>" 6.0 ns;
+NET "DS_DQS<1>" TNM_NET = "DS_DQS<1>";
+TIMESPEC "TSDS_DQS1" = PERIOD "DS_DQS<1>" 6.0 ns;
+
+net "*SDRAMInst/PhyInst/DQSBuf0" MAXDELAY = 800ps | MAXSKEW = 500ps;
+net "*SDRAMInst/PhyInst/DQSBuf1" MAXDELAY = 800ps | MAXSKEW = 500ps;
+
+timegrp "TG_DS_DQ" = PADS("DS_DQ<*>");
+timegrp "TG_DS_DQ_FF" = RAMS;
+timespec "TS_DS_DQ" = from "TG_DS_DQ" to "TG_DS_DQ_FF" 2.15ns;
+
+# Location constraints to guarantee timing for read data path
+
+# Settings for XC3S1400A-5ft256
+# DQS read path routing
+inst "*SDRAMInst/PhyInst/DQS0Buffer0" LOC = "SLICE_X76Y81";
+inst "*SDRAMInst/PhyInst/DQS1Buffer0" LOC = "SLICE_X76Y65";
+
+NET "SDRAMInst/PhyInst/DQSDelayed0"
+ROUTE="{3;1;3s1400aft256;1b6442b3!-1;87648;33072;S!0;-159;0!1;-1481;"
+"-4231!2;-19;-9385!3;-2925;-2139!4;-2463;-1301!5;167;0;L!}";
+
+NET "SDRAMInst/PhyInst/DQSDelayed1"
+ROUTE="{3;1;3s1400aft256;31d213fc!-1;87648;-25640;S!0;-159;0!1;-1590;"
+"10344!2;-2851;-839!3;-3917;4063!4;1470;0!5;167;0;L!}";
+
+NET "SDRAMInst/PhyInst/DQSBuf0"
+ROUTE="{3;1;3s1400aft256;7522d3c2!-1;80768;16200;S!0;1401;-856!0;1489;"
+"-1656!0;-1655;-3544!1;190;10992!2;88;-11832!2;4087;-2661!3;3895;-681!4;"
+"1865;-7360;L!4;1865;3016;L!4;1865;-3984;L!4;1865;-608;L!4;1865;-10736;L!"
+"4;1865;-264;L!4;1865;-10392;L!4;1865;-7016;L!4;1865;3360;L!4;1865;-3640;L"
+"!4;2025;3704;L!4;2025;424;L!4;2025;-2952;L!4;2025;-6328;L!4;2025;-9704;L!"
+"5;1879;6136;L!5;1879;2760;L!5;1879;6480;L!5;1879;3104;L!5;2039;7168;L!5;"
+"2039;3792;L!6;-2120;341;L!6;-2120;685;L!7;1376;1281;L!}";
+
+NET "SDRAMInst/PhyInst/DQSBuf1"
+ROUTE="{3;1;3s1400aft256;c0dcf427!-1;80768;-11880;S!0;1401;-856!0;1489;"
+"-1656!0;-1655;-3544!1;-106;11648!2;88;-11832!2;4087;-2661!3;3895;-681!4;"
+"2161;-8016;L!4;2161;-1264;L!4;2161;3184;L!4;2161;-11392;L!4;2161;-4296;L!"
+"4;2161;-4640;L!4;2161;-7672;L!4;2161;-920;L!4;2161;3528;L!4;2161;-11048;L"
+"!4;2321;-3608;L!4;2321;-6984;L!4;2321;-10360;L!4;2321;4216;L!4;2321;-232;"
+"L!5;1879;2760;L!5;1879;6136;L!5;1879;3104;L!5;1879;6480;L!5;2039;3792;L!"
+"5;2039;7168;L!6;-2120;685;L!6;-2120;341;L!7;1376;1281;L!}";
+
+# DQ read path routing
+NET "SDRAMInst/PhyInst/DDRIn0"
+ROUTE="{3;1;3s1400aft256;5c21f3d!-1;87648;19640;S!0;-159;0!1;-1900;1072!"
+"2;-1532;2024!2;-1532;1680!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf16" LOC=SLICE_X78Y84;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf0" LOC=SLICE_X78Y85;
+INST "SDRAMInst/PhyInst/DataInWriteCount0_0" LOC=SLICE_X79Y85;
+INST "SDRAMInst/PhyInst/DataInWriteCount0_1" LOC=SLICE_X79Y85;
+
+NET "SDRAMInst/PhyInst/DDRIn1"
+ROUTE="{3;1;3s1400aft256;9fa245fd!-1;87648;23016;S!0;-159;0!1;-1434;3104!"
+"2;-3039;2977!3;1041;295!3;1041;639!4;167;0;L!5;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf17" LOC=SLICE_X78Y88;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf1" LOC=SLICE_X78Y89;
+INST "SDRAMInst/PhyInst/DataInWriteCount1_0" LOC=SLICE_X79Y88;
+INST "SDRAMInst/PhyInst/DataInWriteCount1_1" LOC=SLICE_X79Y88;
+
+NET "SDRAMInst/PhyInst/DDRIn2"
+ROUTE="{3;1;3s1400aft256;29d4e7a9!-1;87648;19320;S!0;-159;0!1;-4473;-599!"
+"2;1041;639!2;1041;295!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf18" LOC=SLICE_X78Y82;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf2" LOC=SLICE_X78Y83;
+INST "SDRAMInst/PhyInst/DataInWriteCount2_0" LOC=SLICE_X79Y83;
+INST "SDRAMInst/PhyInst/DataInWriteCount2_1" LOC=SLICE_X79Y83;
+
+NET "SDRAMInst/PhyInst/DDRIn3"
+ROUTE="{3;1;3s1400aft256;7566fdd1!-1;87648;9192;S!0;-159;0!1;-1900;1392!"
+"2;-1532;2024!2;-1532;1680!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf19" LOC=SLICE_X78Y78;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf3" LOC=SLICE_X78Y79;
+INST "SDRAMInst/PhyInst/DataInWriteCount3_0" LOC=SLICE_X79Y79;
+INST "SDRAMInst/PhyInst/DataInWriteCount3_1" LOC=SLICE_X79Y79;
+
+NET "SDRAMInst/PhyInst/DDRIn4"
+ROUTE="{3;1;3s1400aft256;cf32976!-1;87648;5816;S!0;-159;0!1;-4473;-599!2;"
+"1041;639!2;1041;295!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf20" LOC=SLICE_X78Y74;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf4" LOC=SLICE_X78Y75;
+INST "SDRAMInst/PhyInst/DataInWriteCount4_0" LOC=SLICE_X79Y75;
+INST "SDRAMInst/PhyInst/DataInWriteCount4_1" LOC=SLICE_X79Y75;
+
+NET "SDRAMInst/PhyInst/DDRIn5"
+ROUTE="{3;1;3s1400aft256;5babc554!-1;87648;9512;S!0;-159;0!1;-1434;3104!"
+"2;-3039;2729!3;1041;295!3;1041;639!4;167;0;L!5;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf21" LOC=SLICE_X78Y80;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf5" LOC=SLICE_X78Y81;
+INST "SDRAMInst/PhyInst/DataInWriteCount5_0" LOC=SLICE_X79Y81;
+INST "SDRAMInst/PhyInst/DataInWriteCount5_1" LOC=SLICE_X79Y81;
+
+NET "SDRAMInst/PhyInst/DDRIn6"
+ROUTE="{3;1;3s1400aft256;b39f2f5b!-1;87648;6136;S!0;-159;0!1;-1900;1072!"
+"2;-1532;2024!2;-1532;1680!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf22" LOC=SLICE_X78Y76;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf6" LOC=SLICE_X78Y77;
+INST "SDRAMInst/PhyInst/DataInWriteCount6_0" LOC=SLICE_X79Y77;
+INST "SDRAMInst/PhyInst/DataInWriteCount6_1" LOC=SLICE_X79Y77;
+
+NET "SDRAMInst/PhyInst/DDRIn7"
+ROUTE="{3;1;3s1400aft256;c102b523!-1;87648;22696;S!0;-159;0!1;-1900;1392!"
+"2;-1532;2024!2;-1532;1680!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf23" LOC=SLICE_X78Y86;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf7" LOC=SLICE_X78Y87;
+INST "SDRAMInst/PhyInst/DataInWriteCount7_0" LOC=SLICE_X79Y87;
+INST "SDRAMInst/PhyInst/DataInWriteCount7_1" LOC=SLICE_X79Y87;
+
+NET "SDRAMInst/PhyInst/DDRIn8"
+ROUTE="{3;1;3s1400aft256;48145fe6!-1;87648;-18568;S!0;-159;0!1;-1434;"
+"3104!2;1554;2640!3;-1265;15!4;-2287;713!4;-2287;369!5;167;0;L!6;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf24" LOC=SLICE_X78Y64;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf8" LOC=SLICE_X78Y65;
+INST "SDRAMInst/PhyInst/DataInWriteCount8_0" LOC=SLICE_X79Y65;
+INST "SDRAMInst/PhyInst/DataInWriteCount8_1" LOC=SLICE_X79Y65;
+
+NET "SDRAMInst/PhyInst/DDRIn9"
+ROUTE="{3;1;3s1400aft256;150f5de1!-1;87648;-5064;S!0;-159;0!1;-1490;3984!"
+"2;-2983;2921!3;1041;295!3;1041;639!4;167;0;L!5;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf25" LOC=SLICE_X78Y72;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf9" LOC=SLICE_X78Y73;
+INST "SDRAMInst/PhyInst/DataInWriteCount9_0" LOC=SLICE_X79Y73;
+INST "SDRAMInst/PhyInst/DataInWriteCount9_1" LOC=SLICE_X79Y73;
+
+NET "SDRAMInst/PhyInst/DDRIn10"
+ROUTE="{3;1;3s1400aft256;83528034!-1;87648;-21944;S!0;-159;0!1;-1900;"
+"1072!2;-1532;2024!2;-1532;1680!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf26" LOC=SLICE_X78Y60;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf10" LOC=SLICE_X78Y61;
+INST "SDRAMInst/PhyInst/DataInWriteCount10_0" LOC=SLICE_X79Y61;
+INST "SDRAMInst/PhyInst/DataInWriteCount10_1" LOC=SLICE_X79Y61;
+
+NET "SDRAMInst/PhyInst/DDRIn11"
+ROUTE="{3;1;3s1400aft256;4448fe23!-1;87648;-5384;S!0;-159;0!1;-1900;1392!"
+"2;-1532;2024!2;-1532;1680!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf27" LOC=SLICE_X78Y70;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf11" LOC=SLICE_X78Y71;
+INST "SDRAMInst/PhyInst/DataInWriteCount11_0" LOC=SLICE_X79Y71;
+INST "SDRAMInst/PhyInst/DataInWriteCount11_1" LOC=SLICE_X79Y71;
+
+NET "SDRAMInst/PhyInst/DDRIn12"
+ROUTE="{3;1;3s1400aft256;e56c1cd6!-1;87648;-22264;S!0;-159;0!1;-4473;"
+"-599!2;1041;639!2;1041;295!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf28" LOC=SLICE_X78Y58;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf12" LOC=SLICE_X78Y59;
+INST "SDRAMInst/PhyInst/DataInWriteCount12_0" LOC=SLICE_X79Y59;
+INST "SDRAMInst/PhyInst/DataInWriteCount12_1" LOC=SLICE_X79Y59;
+
+NET "SDRAMInst/PhyInst/DDRIn13"
+ROUTE="{3;1;3s1400aft256;cc37a9ec!-1;87648;-8760;S!0;-159;0!1;-4473;-599!"
+"2;1041;639!2;1041;295!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf29" LOC=SLICE_X78Y66;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf13" LOC=SLICE_X78Y67;
+INST "SDRAMInst/PhyInst/DataInWriteCount13_0" LOC=SLICE_X79Y67;
+INST "SDRAMInst/PhyInst/DataInWriteCount13_1" LOC=SLICE_X79Y67;
+
+NET "SDRAMInst/PhyInst/DDRIn14"
+ROUTE="{3;1;3s1400aft256;abf0364a!-1;87648;-18888;S!0;-159;0!1;-1900;"
+"1392!2;-1532;1680!2;-1532;2024!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf30" LOC=SLICE_X78Y62;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf14" LOC=SLICE_X78Y63;
+INST "SDRAMInst/PhyInst/DataInWriteCount14_0" LOC=SLICE_X79Y63;
+INST "SDRAMInst/PhyInst/DataInWriteCount14_1" LOC=SLICE_X79Y63;
+
+NET "SDRAMInst/PhyInst/DDRIn15"
+ROUTE="{3;1;3s1400aft256;911a15de!-1;87648;-8440;S!0;-159;0!1;-1900;1072!"
+"2;-1532;2024!2;-1532;1680!3;167;0;L!4;167;0;L!}";
+INST "SDRAMInst/PhyInst/Mram_DataInBuf31" LOC=SLICE_X78Y68;
+INST "SDRAMInst/PhyInst/Mram_DataInBuf15" LOC=SLICE_X78Y69;
+INST "SDRAMInst/PhyInst/DataInWriteCount15_0" LOC=SLICE_X79Y69;
+INST "SDRAMInst/PhyInst/DataInWriteCount15_1" LOC=SLICE_X79Y69;
+
+##############################################################################
+# Block timing errors from Xilinx FIFOs for example 3
+#NET "*pntr_gc*" TIG; 
